@@ -15,6 +15,8 @@ let students = [
     score: 2
     }
 ];
+
+
 //Primero hice un recorrido de las notas
 students.forEach(students => console.log(students.score));
 //utilice el forEach con el condicional If para saber quien aprobo y quien no
@@ -25,6 +27,10 @@ students.forEach(students => {
         console.log('Estudiante ' + students.name +  ' ' + students.lastname + ' desaprobo con ' + students.score);
         }
 });
+//filter
+let stdAp = students.filter(student => student.score >= 4);
+console.log(stdAp);
+
 //Asc. Order
 let st = students.sort((a,b) => a.score - b.score);
 console.log(st)
@@ -45,13 +51,8 @@ for ( let i = 0; i < students.length; i++ ){
     }
 }
 console.log(std);
-//do while
-/* var i = students[i];
-do{
-    i = i >= 4;
-    i++;
-    console.log(students[i]);
-}
-while( i >= 4 );
- */
+
+
+
+
 
