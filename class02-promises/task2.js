@@ -1,5 +1,7 @@
 /* tarea2
-Crear una función asíncrona que demore unos segundos en completarse, pero que por dentro no tenga ninguna lógica, 
+en: Create an async function with time to autocomplete and transform the code with a promise and print the both results at the same time.
+
+es: Crear una función asíncrona que demore unos segundos en completarse, pero que por dentro no tenga ninguna lógica, 
 es decir, no vale usar bucles ni crear requests http, ni leer o escribir archivos.
 
 Transformar el código que hicieron ayer de filtro de alumnos a una promesa
