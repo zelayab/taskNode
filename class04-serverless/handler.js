@@ -1,3 +1,8 @@
+/* create a handler with the serverless-offline to create a transaction who gets the result from amount USD and AR together.
+/* Use postman to check the GET/POST.
+
+
+
 module.exports.main = (event, context, callback) => {
 
   //destructuring to transaction and parse the JSON
