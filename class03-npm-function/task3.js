@@ -1,3 +1,7 @@
+/* create a function to rotate to the left the array and upload to npm page
+
+
+
 /**function left rotation
  * @param  {} arr
  * @param  {} rotations
