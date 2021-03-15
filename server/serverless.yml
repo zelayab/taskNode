@@ -1,0 +1,43 @@
+
+
+service: server
+
+frameworkVersion: '>=1.1.0 <2.0.0'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  stage: ${opt:stage, 'dev'}
+  iamRoleStatements: 
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+      Resource: ['arn:aws:s3:::closures-demo-${self:provider.stage}','arn:aws:s3:::closures-demo-${self:provider.stage}/*']
+  tracing:
+    apiGateway: true
+    lambda: true
+
+
+functions:
+  upload:
+    handler: http-file-processor.handler
+    events:
+      - http:
+        path: upload
+        method: POST
+        cors: true
+
+
+trigger:
+  handler: process.handler
+  memorySize: 128
+  events:
+    s3:
+      bucket: ${self:custom.bucket}
+      event: s3:ObjectCreated:*
+
+
+custom:
+  bucket: ${self:custom.bucket}
+        
